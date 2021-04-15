@@ -1,4 +1,4 @@
-name: agones-spigot
+name: agones_spigot
 main: io.github.robit.agones_spigot
 version: 1.0
 api-version: "1.14"
