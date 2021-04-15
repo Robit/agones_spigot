@@ -18,14 +18,20 @@
   <build>
     <defaultGoal>clean package</defaultGoal>
     <finalName>${project.artifactId}</finalName>
-    <extensions>
-      <extension>
-          <groupId>kr.motd.maven</groupId>
-          <artifactId>os-maven-plugin</artifactId>
-          <version>1.7.0</version>
-      </extension>
-    </extensions>
     <plugins>
+        <plugin>
+            <groupId>kr.motd.maven</groupId>
+            <artifactId>os-maven-plugin</artifactId>
+            <version>1.7.0</version>
+            <executions>
+                <execution>
+                    <phase>initialize</phase>
+                    <goals>
+                        <goal>detect</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -87,6 +93,11 @@
            <scope>provided</scope>
     </dependency>
     <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty-shaded</artifactId>
+            <version>1.37.0</version>
+    </dependency>
+    <dependency>
           <groupId>io.grpc</groupId>
           <artifactId>grpc-protobuf</artifactId>
           <version>1.37.0</version>
@@ -101,6 +112,11 @@
           <artifactId>annotations-api</artifactId>
           <version>6.0.53</version>
           <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xolstice.maven.plugins</groupId>
+      <artifactId>protobuf-maven-plugin</artifactId>
+      <version>0.6.1</version>
     </dependency>
   </dependencies>
 </project>
